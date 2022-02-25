@@ -9,10 +9,9 @@ try{
     $db = new PDO($dsn, $username);
     //$db = new PDO($dsn, $username, $password);
 }catch (PDOException $e){
-    $error_message = 'Database Error';
-    $error_message .= $e->getMessage();
-    //echo $error_message;
-    include('../error.php');
+    $error = 'Database Error: ';
+    $error .= $e->getMessage();
+    include('../view/error.php');
 exit();
 }
 
